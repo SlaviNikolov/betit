@@ -1,0 +1,33 @@
+<h1 class="text-center">Senior Frontend Developers test</h1>
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Email</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>Zip-code</th>
+			<th>Country</th>
+			<th></th>
+		</tr> 
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="item in address track by $index">
+			<td>{{ item.fName }}</td>
+			<td>{{ item.lName }}</td>
+			<td>{{ item.email }}</td>
+			<td>{{ item.aDdress }}</td>
+			<td>{{ item.city }}</td>
+			<td>{{ item.zCode }}</td>
+			<td>{{ item.country }}</td>
+			<td>
+				<a href="#/edit/{{$index}}"><i class="fa fa-edit"></i></a>
+				<a href="" data-ng-click="delete($index)"><i class="fa fa-trash-o"></i></a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<a class="button tiny right" href="#/add"><i class="fa fa-plus-circle"></i> Add new</a>

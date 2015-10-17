@@ -1,0 +1,61 @@
+<h1>Edit address of {{ result.fName }} {{ result.lName }}</h1>
+
+<form class="ng-cloak" novalidate name="edit" data-ng-submit="save()">
+  <div class="row">
+    <div class="large-6 columns">
+      <label data-ng-class="{'error': edit.fName.$error.required}" for="fName">First Name <small>(Required)</small>
+        <input data-ng-class="{'error': edit.fName.$error.required}" name="fName" id="fName" type="text" required data-ng-model="result.fName">
+      </label>
+      <small data-ng-if="edit.fName.$error.required" class="error">This field is required</small>
+    </div>
+    <div class="large-6 columns">
+      <label data-ng-class="{'error': edit.lName.$error.required}" for="lName">Last Name <small>(Required)</small>
+        <input data-ng-class="{'error': edit.lName.$error.required}" name="lName" id="lName" type="text" required data-ng-model="result.lName">
+      </label>
+      <small data-ng-if="edit.lName.$error.required" class="error">This field is required</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <label data-ng-class="{'error': edit.email.$error.required}" for="email">Email <small>(Required)</small>
+        <input data-ng-class="{'error': edit.email.$error.required}" data-ng-pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" name="email" id="email" type="email" required data-ng-model="result.email">
+      </label>
+      <small data-ng-if="edit.email.$error.required" class="error">Field is requred</small>
+      <small data-ng-if="edit.email.$error.pattern" class="error">Invalid email address</small>
+    </div>
+    <div class="large-6 columns">
+      <label for="aDdress">Address
+        <input name="aDdress" id="aDdress" type="text" data-ng-model="result.aDdress">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <div class="row">
+        <div class="large-7 columns">
+          <label for="city">City
+            <input name="city" id="city" type="text" data-ng-model="result.city">
+          </label>
+        </div>
+        <div class="large-5 columns">
+          <label data-ng-class="{'error': edit.zCode.$error.pattern}" for="zCode">Zip-Code
+            <input data-ng-class="{'error': edit.zCode.$error.pattern}" maxlength="5" name="zCode" id="zCode" type="text" data-ng-pattern="/^\d{1,}$/" data-ng-model="result.zCode">
+          </label>
+          <small class="error" data-ng-if="edit.zCode.$error.pattern">The zip code should to contain only digits.</small>
+        </div>
+      </div>
+    </div>
+    <div class="large-6 columns">
+      <label for="country">Country
+        <input name="country" id="country" type="text" data-ng-model="result.country">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <input type="submit" data-ng-disabled="edit.$invalid" class="button small" value="Save">
+    </div>
+  </div>
+</form>
+
+

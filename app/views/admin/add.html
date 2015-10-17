@@ -1,0 +1,61 @@
+<h1>Add new address</h1>
+
+<form class="ng-cloak" novalidate name="add" data-ng-submit="save()">
+	<div class="row">
+		<div class="large-6 columns">
+			<label data-ng-class="{'error': add.fName.$error.required && add.fName.$dirty}" for="fName">First Name <small>(Required)</small>
+				<input data-ng-class="{'error': add.fName.$error.required && add.fName.$dirty}" name="fName" id="fName" type="text" data-ng-pattern="/^[a-zA-Z0-9]{1,}$/" required data-ng-model="fName">
+			</label>
+			<small data-ng-if="add.fName.$error.required && add.fName.$dirty" class="error">This field is required</small>
+		</div>
+		<div class="large-6 columns">
+			<label data-ng-class="{'error': add.lName.$error.required && add.lName.$dirty}" for="lName">Last Name <small>(Required)</small>
+				<input data-ng-class="{'error': add.lName.$error.required && add.lName.$dirty}" name="lName" id="lName" type="text" required data-ng-model="lName">
+			</label>
+			<small data-ng-if="add.lName.$error.required && add.lName.$dirty" class="error">This field is required</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<label data-ng-class="{'error': (add.email.$error.required || add.email.$error.pattern) && add.email.$dirty}" for="email">Email <small>(Required)</small>
+				<input data-ng-class="{'error': (add.email.$error.required || add.email.$error.pattern) && add.email.$dirty}" data-ng-pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" name="email" id="email" type="email" required data-ng-model="email">
+			</label>
+			<small data-ng-if="(add.email.$error.required || add.email.$error.pattern) && add.email.$dirty" class="error">
+				<span data-ng-if="add.email.$error.required">Field is requred</span><span data-ng-if="add.email.$error.pattern">Invalid email address</span></small>
+		</div>
+		<div class="large-6 columns">
+			<label for="aDdress">Address
+				<input name="aDdress" id="aDdress" type="text" data-ng-model="aDdress">
+			</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-6 columns">
+			<div class="row">
+				<div class="large-7 columns">
+					<label for="city">City
+						<input name="city" id="city" type="text" data-ng-model="city">
+					</label>
+				</div>
+				<div class="large-5 columns">
+					<label data-ng-class="{'error': add.zCode.$error.pattern && add.zCode.$dirty}" for="zCode">Zip-Code
+						<input data-ng-class="{'error': add.zCode.$error.pattern && add.zCode.$dirty}" maxlength="5" name="zCode" id="zCode" type="text" data-ng-pattern="/^\d{1,}$/" data-ng-model="zCode">
+					</label>
+					<small class="error" data-ng-if="add.zCode.$error.pattern && add.zCode.$dirty">The zip code should to contain only digits.</small>
+				</div>
+			</div>
+		</div>
+		<div class="large-6 columns">
+			<label for="country">Country
+				<input name="country" id="country" type="text" data-ng-model="country">
+			</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<input type="submit" data-ng-disabled="add.$pristine" class="button small" value="Save">
+		</div>
+	</div>
+</form>
+
+

@@ -1,0 +1,29 @@
+[
+	{
+		"fName": "John",
+		"lName": "Smith",
+		"email": "test@test.com",
+		"aDdress": "ShortDash",
+		"city": "City",
+		"zCode": 12345,
+		"country": "Country"
+	},
+	{
+		"fName": "John1",
+		"lName": "Smith1",
+		"email": "test@test.com1",
+		"aDdress": "ShortDash1",
+		"city": "City1",
+		"zCode": 12346,
+		"country": "Country1"
+	},
+	{
+		"fName": "John2",
+		"lName": "Smith2",
+		"email": "test@test.com2",
+		"aDdress": "ShortDash2",
+		"city": "City2",
+		"zCode": 12347,
+		"country": "Country2"
+	}
+]
